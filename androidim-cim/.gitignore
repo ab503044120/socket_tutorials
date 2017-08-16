@@ -1,0 +1,12 @@
+*.class
+
+*.dex
+
+*.bak
+
+*.apk
+
+.fatjar
+bin/
+
+classes/
