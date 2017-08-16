@@ -14,7 +14,7 @@ import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.serialization.ObjectSerializationCodecFactory;
 import org.apache.mina.filter.keepalive.KeepAliveFilter;
 import org.apache.mina.filter.keepalive.KeepAliveRequestTimeoutHandler;
-import org.apache.mina.socket.nio.NioSocketConnector;
+import org.apache.mina.transport.socket.nio.NioSocketConnector;
 
 import java.net.InetSocketAddress;
 import java.util.concurrent.Callable;
