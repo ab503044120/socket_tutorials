@@ -21,7 +21,7 @@ public class ClientTest {
 		connector.getFilterChain().addLast("codec",
 				new ProtocolCodecFilter(new MessageCodecFactory()));
 		connector.setHandler(new ClientHandler());
-		ConnectFuture cf = connector.connect(new InetSocketAddress("127.0.0.1", 8888));
+		ConnectFuture cf = connector.connect(new InetSocketAddress("127.0.0.1", 9999));
 		cf.awaitUninterruptibly();
 		cf.getSession().write("hello,mina");
 	}
