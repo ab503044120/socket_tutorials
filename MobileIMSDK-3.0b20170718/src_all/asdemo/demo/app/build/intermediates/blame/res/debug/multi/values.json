@@ -1,0 +1,68 @@
+[
+    {
+        "outputFile": "D:\\MyWork\\ggh\\code\\socket_tutorials\\MobileIMSDK-3.0b20170718\\src_all\\asdemo\\demo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 49,
+                    "endOffset": 100
+                },
+                "from": {
+                    "file": "D:\\MyWork\\ggh\\code\\socket_tutorials\\MobileIMSDK-3.0b20170718\\src_all\\asdemo\\demo\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 19,
+                        "endColumn": 49,
+                        "endOffset": 64
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endLine": 9,
+                    "endColumn": 12,
+                    "endOffset": 391
+                },
+                "from": {
+                    "file": "D:\\MyWork\\ggh\\code\\socket_tutorials\\MobileIMSDK-3.0b20170718\\src_all\\asdemo\\demo\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 191,
+                        "endLine": 12,
+                        "endColumn": 12,
+                        "endOffset": 481
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 396,
+                    "endLine": 12,
+                    "endColumn": 12,
+                    "endOffset": 551
+                },
+                "from": {
+                    "file": "D:\\MyWork\\ggh\\code\\socket_tutorials\\MobileIMSDK-3.0b20170718\\src_all\\asdemo\\demo\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 522,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 679
+                    }
+                }
+            }
+        ]
+    }
+]

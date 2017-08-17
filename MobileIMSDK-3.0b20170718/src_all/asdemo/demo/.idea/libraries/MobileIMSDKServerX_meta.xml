@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="MobileIMSDKServerX_meta">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mobileIMSDK4aXOpen/libs/MobileIMSDKServerX_meta.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
