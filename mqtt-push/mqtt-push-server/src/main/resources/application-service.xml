@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+       xmlns:context="http://www.springframework.org/schema/context"  
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd   
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context.xsd">  
+
+	<context:annotation-config/>
+	
+	<bean id="redispoolconfig" class="redis.clients.jedis.JedisPoolConfig" ></bean>
+	
+	
+	<bean id="jedispool" class="redis.clients.jedis.JedisPool">
+		<constructor-arg name="poolConfig" ref="redispoolconfig" />
+		<constructor-arg name="host" value="localhost" />
+	</bean>
+  
+  	<bean class="com.teamsun.mqttserver.service.AnsyncService"></bean> 
+  	
+  	<bean class="com.teamsun.mqttserver.service.ChannelUserService"></bean> 
+  	
+  	<bean class="com.teamsun.mqttserver.service.CheckUserService"></bean> 
+  	
+  	<bean class="com.teamsun.mqttserver.service.MessagePushService"></bean> 
+  	
+  	<bean class="com.teamsun.mqttserver.service.TopicService"></bean>   
+  	
+  	<bean class="com.teamsun.mqttserver.service.MQManagerService"></bean>
+  	
+  	<bean class="com.teamsun.mqttserver.service.RedisService">
+  	 <property name="auth" value="123456"></property>
+  	</bean>
+  
+</beans> 

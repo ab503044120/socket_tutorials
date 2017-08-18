@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.teamsun</groupId>
+  <artifactId>mqtt-push</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>  
+        <!-- 编译时的编码 -->  
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>  
+   	  <netty-version>4.1.4.Final</netty-version>
+   	    <log4j2.version>2.6.2</log4j2.version>
+  </properties>
+  
+
+
+<dependencies>
+
+<dependency>
+ <groupId>junit</groupId>
+ <artifactId>junit</artifactId>
+ <version>4.11</version>
+</dependency>
+
+<dependency>
+    <groupId>io.netty</groupId>
+    <artifactId>netty-all</artifactId>
+    <version>${netty-version}</version>
+</dependency>
+
+<dependency>
+    <groupId>io.netty</groupId>
+    <artifactId>netty-codec-mqtt</artifactId>
+    <version>${netty-version}</version>
+</dependency>
+
+<dependency>
+    <groupId>io.netty</groupId>
+    <artifactId>netty-transport-udt</artifactId>
+    <version>${netty-version}</version>
+</dependency>
+
+<dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.17</version>
+</dependency>
+
+
+</dependencies>
+
+
+  <build>
+ 
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <plugins>   
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <modules>
+  	<module>mqtt-push-server</module>
+  	<module>mqtt-push-sdk</module>
+  	<module>push-p2p-server</module>
+  	<module>push-p2p-sdk</module>
+  </modules>
+</project>
