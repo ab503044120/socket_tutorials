@@ -16,14 +16,14 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		<constructor-arg name="poolConfig" ref="redispoolconfig" />
 		<constructor-arg name="host" value="localhost" />
 	</bean>
-  
-  	<bean class="com.teamsun.mqttserver.service.AnsyncService"></bean> 
-  	
-  	<bean class="com.teamsun.mqttserver.service.ChannelUserService"></bean> 
-  	
-  	<bean class="com.teamsun.mqttserver.service.CheckUserService"></bean> 
-  	
-  	<bean class="com.teamsun.mqttserver.service.MessagePushService"></bean> 
+
+  	<bean class="com.teamsun.mqttserver.service.AnsyncService"></bean>
+
+  	<bean class="com.teamsun.mqttserver.service.ChannelUserService"></bean>
+
+  	<bean class="com.teamsun.mqttserver.service.CheckUserService"></bean>
+
+  	<bean class="com.teamsun.mqttserver.service.MessagePushService"></bean>
   	
   	<bean class="com.teamsun.mqttserver.service.TopicService"></bean>   
   	
