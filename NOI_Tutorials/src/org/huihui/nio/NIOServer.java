@@ -64,18 +64,18 @@ public class NIOServer {
             if (count > 0) {
                 recievText = new String(receiveBuffer.array(), 0, count);
                 System.out.println("服务端接收到客户端的信息:" + recievText);
-                client.register(mSelector, SelectionKey.OP_WRITE);
             }
-        } else if (selectionKey.isWritable()) {
-            sendBuffer.clear();
-            client = (SocketChannel) selectionKey.channel();
-            sendText = "我收到你的msg了";
-            sendBuffer.put(sendText.getBytes("utf-8"));
-            sendBuffer.flip();
-            client.write(sendBuffer);
-            System.out.println("服务端发送数据给客户端: " + sendText);
-            client.register(mSelector, SelectionKey.OP_READ);
         }
+//        else if (selectionKey.isWritable()) {
+//            sendBuffer.clear();
+//            client = (SocketChannel) selectionKey.channel();
+//            sendText = "我收到你的msg了";
+//            sendBuffer.put(sendText.getBytes("utf-8"));
+//            sendBuffer.flip();
+//            client.write(sendBuffer);
+//            System.out.println("服务端发送数据给客户端: " + sendText);
+//            client.register(mSelector, SelectionKey.OP_READ);
+//        }
 
     }
 
