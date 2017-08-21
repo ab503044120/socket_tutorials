@@ -178,6 +178,7 @@ public class MultiThreadNIOEchoServer {
                 if (sk.isAcceptable()) {
                     doAccept(sk);
                 } else if (sk.isValid() && sk.isReadable()) {
+                    System.out.println("我开始接到了: " +System.currentTimeMillis());
                     if (!geym_time_stat.containsKey(((SocketChannel) sk.channel()).socket())) {
                         geym_time_stat.put(((SocketChannel) sk.channel()).socket(), System.currentTimeMillis());
                         doRead(sk);

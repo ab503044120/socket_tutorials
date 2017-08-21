@@ -29,6 +29,7 @@ public class HeavyThreadEchoClient {
                 client=new Socket();
                 client.connect(new InetSocketAddress("localhost",8000));
                 writer=new PrintWriter(client.getOutputStream(),true);
+                System.out.println("我从现在开始发送: " +System.currentTimeMillis());
                 writer.print("h");
                 LockSupport.parkNanos(sleep_time);
                 writer.print("e");
