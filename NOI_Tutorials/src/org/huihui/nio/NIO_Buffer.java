@@ -17,17 +17,21 @@ public class NIO_Buffer {
         ByteBuffer buf = ByteBuffer.allocate(48);
 
         int bytesRead = inChannel.read(buf); //read into buffer.
-//        while (bytesRead != -1) {
+        System.out.println("总共: " + bytesRead);
+        while (bytesRead != -1) {
 
             buf.flip();  //make buffer ready for read
 
             while (buf.hasRemaining()) {
                 System.out.print((char) buf.get() + "   " + buf.position() + "\n"); // read 1 byte at a time
             }
-            System.out.println("读取完成" + new String(buf.array(),"gbk"));
+            System.out.println("读取完成 " + buf.position() + new String(buf.array(), "gbk"));
+            //clear不会清除里面的数据
             buf.clear(); //make buffer ready for writing
+            buf = ByteBuffer.allocate(48);
             bytesRead = inChannel.read(buf);
-//        }
+            System.out.println("总共: " + bytesRead);
+        }
         aFile.close();
     }
 
