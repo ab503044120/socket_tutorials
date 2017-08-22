@@ -14,12 +14,12 @@ import java.util.Set;
  */
 public class NIOClient {
     private int PORT = 8889;
-    private static int blockSize = 4096;
+    private static int blockSize = 1024 * 100;
     private static ByteBuffer sendBuffer = ByteBuffer.allocate(blockSize);
     private static ByteBuffer receiveBuffer = ByteBuffer.allocate(blockSize);
     private Selector mSelector;
 
-    private final static InetSocketAddress serverAddress = new InetSocketAddress("localhost", 8888);
+    private final static InetSocketAddress serverAddress = new InetSocketAddress("localhost", 8889);
 
 
     public static void main(String[] args) throws IOException {
@@ -47,8 +47,13 @@ public class NIOClient {
                         client.finishConnect();
                         System.out.println("client connected success");
                         sendText = "你好服务端";
+                        byte[] bytes = sendText.getBytes("utf-8");
+                        byte a[] = new byte[blockSize];
+                        for (int i = 0; i < blockSize; i++) {
+                            a[i] = bytes[i % 10];
+                        }
                         sendBuffer.clear();
-                        sendBuffer.put(sendText.getBytes("utf-8"));
+                        sendBuffer.put(a);
                         sendBuffer.flip();
                         client.write(sendBuffer);
                     }
@@ -61,6 +66,8 @@ public class NIOClient {
                         recieveText = new String(receiveBuffer.array());
                         System.out.println("客户端接收到服务端数据: " + recieveText);
                         client.register(selector, SelectionKey.OP_WRITE);
+                    }else{
+                        next.cancel();
                     }
                 } else if (next.isWritable()) {
                     try {

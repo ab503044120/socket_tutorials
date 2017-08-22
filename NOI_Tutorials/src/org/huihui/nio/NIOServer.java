@@ -15,8 +15,8 @@ import java.util.Set;
  * Created by huihui on 2017/8/20.
  */
 public class NIOServer {
-    private int PORT = 8888;
-    private int blockSize = 4096;
+    private int PORT = 8889;
+    private int blockSize = 1024 * 100;
     private ByteBuffer sendBuffer = ByteBuffer.allocate(blockSize);
     private ByteBuffer receiveBuffer = ByteBuffer.allocate(blockSize);
     private Selector mSelector;
@@ -60,10 +60,23 @@ public class NIOServer {
             client.register(mSelector, SelectionKey.OP_READ);
         } else if (selectionKey.isReadable()) {
             client = (SocketChannel) selectionKey.channel();
+            System.out.println(System.currentTimeMillis());
             count = client.read(receiveBuffer);
+            System.out.println(System.currentTimeMillis());
+            System.out.println("接收到数据:" + receiveBuffer.position() + receiveBuffer.hasRemaining());
             if (count > 0) {
+                while (receiveBuffer.hasRemaining()) {
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("还没读取完成" + receiveBuffer.position());
+                }
                 recievText = new String(receiveBuffer.array(), 0, count);
                 System.out.println("服务端接收到客户端的信息:" + recievText);
+            } else {
+                selectionKey.cancel();
             }
         }
 //        else if (selectionKey.isWritable()) {
