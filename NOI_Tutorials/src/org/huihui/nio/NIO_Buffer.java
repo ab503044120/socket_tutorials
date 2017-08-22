@@ -15,7 +15,7 @@ public class NIO_Buffer {
 
 //create buffer with capacity of 48 bytes
         ByteBuffer buf = ByteBuffer.allocate(48);
-
+        //这里是可以读多少
         int bytesRead = inChannel.read(buf); //read into buffer.
         System.out.println("总共: " + bytesRead);
         while (bytesRead != -1) {
@@ -23,12 +23,13 @@ public class NIO_Buffer {
             buf.flip();  //make buffer ready for read
 
             while (buf.hasRemaining()) {
-                System.out.print((char) buf.get() + "   " + buf.position() + "\n"); // read 1 byte at a time
+                byte[] dst = new byte[48];
+                buf.get(dst, 0, buf.limit());
+                System.out.print(new String(dst, "gbk") + "\n"); // read 1 byte at a time
             }
-            System.out.println("读取完成 " + buf.position() + new String(buf.array(), "gbk"));
             //clear不会清除里面的数据
             buf.clear(); //make buffer ready for writing
-            buf = ByteBuffer.allocate(48);
+//            buf = ByteBuffer.allocate(48);
             bytesRead = inChannel.read(buf);
             System.out.println("总共: " + bytesRead);
         }
