@@ -1,4 +1,0 @@
-#Thu Aug 17 13:34:13 CST 2017
-base.0=D\:\\MyWork\\ggh\\code\\socket_tutorials\\MobileIMSDK-3.0b20170718\\src_all\\asdemo\\demo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
-renamed.0=classes.dex
-file.0=D\:\\MyWork\\ggh\\code\\socket_tutorials\\MobileIMSDK-3.0b20170718\\src_all\\asdemo\\demo\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
